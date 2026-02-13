@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 backend/node_modules
 
+# Large media files (exceed GitHub 100MB limit - host externally)
+/public/assets/background.mp4
+/public/assets/DreamRide/videos/*.mp4
+
