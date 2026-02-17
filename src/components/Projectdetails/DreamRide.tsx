@@ -168,29 +168,6 @@ const SocialLink = styled.a`
   text-decoration: none;
 `;
 
-// Organize your assets under suitable sections
-const digitalEnvironmentImages = [
-  "HighresScreenshot00000.png",
-  "HighresScreenshot00001.png",
-  "HighresScreenshot00002.png",
-  "HighresScreenshot00003.png",
-  "HighresScreenshot00004.png",
-];
-const screenshotsImages = [
-  "HighresScreenshot00005.png",
-  "HighresScreenshot00006.png",
-  "HighresScreenshot00007.png",
-  "HighresScreenshot00008.png",
-  "HighresScreenshot00009.png",
-  "HighresScreenshot00010.png",
-  "HighresScreenshot00011.png",
-];
-const clayRenderImages = [
-  "HighresScreenshot00012.png",
-  "HighresScreenshot00013.png",
-  "HighresScreenshot00014.png",
-  "Screenshot (4).png",
-];
 const mainVideo = "/assets/DreamRide/videos/Misty Rails Main.mp4";
 const otherVideos = [
   { src: "/assets/DreamRide/videos/ai_meshy.mp4", title: "AI Meshy" },

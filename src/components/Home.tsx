@@ -5,9 +5,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Typography, Container, Grid, IconButton } from "@mui/material";
 import Navigation from "./Navigation";
-import StillImages from "./StillImages";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 
 // FontAwesome Imports
@@ -90,69 +88,6 @@ const CTAButton = styled.button`
   }
 `;
 
-const AnimationGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0;
-  width: 100%;
-  background-color: #0a0a0a;
-`;
-
-const AnimationCard = styled(motion.div)`
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: #1a1a1a;
-  transition: transform 0.3s ease;
-
-  &:hover img {
-    transform: scale(1.1);
-  }
-
-  &:hover div {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const AnimationMedia = styled.div`
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-  }
-`;
-
-const AnimationTitle = styled(motion.div)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2.5rem 1.5rem 1.5rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7) 50%, transparent);
-  color: white;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-  text-align: left;
-
-  h6 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-`;
-
 const ContactSection = styled.div`
   min-height: 100vh;
   display: flex;
@@ -189,42 +124,6 @@ const SocialLink = styled.a`
   text-decoration: none;
 `;
 
-// Add styled components for TheDreamRide section
-const DreamRideSection = styled.section`
-  background: #111;
-  color: #fff;
-  padding: 4rem 0 2rem 0;
-  text-align: center;
-`;
-const DreamRideTitle = styled.h2`
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-`;
-const DreamRideVideo = styled.video`
-  width: 90vw;
-  max-width: 1200px;
-  border-radius: 16px;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-`;
-const DreamRideImagesScroll = styled.div`
-  display: flex;
-  overflow-x: auto;
-  gap: 1.5rem;
-  padding: 1.5rem 0 2rem 0;
-  max-width: 95vw;
-  margin: 0 auto;
-`;
-const DreamRideImage = styled.img`
-  height: 320px;
-  border-radius: 12px;
-  object-fit: cover;
-  background: #222;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-`;
-
 // Add styled components for Projects section
 const ProjectsSection = styled.section`
   background: #000;
@@ -247,12 +146,6 @@ const ProjectImage = styled.img`
     z-index: 2;
   }
 `;
-
-// Framer Motion Variants
-const titleVariants = {
-  initial: { opacity: 0, y: 30 },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
 
 // Mid Section Component
 const MidSection: React.FC = () => (
@@ -289,12 +182,10 @@ const HideScrollbars = createGlobalStyle`
 
 // Main Component
 const Home: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<'work' | 'still-images'>("work");
   const projectsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   const handleSectionChange = (section: 'work' | 'still-images') => {
-    setActiveSection(section);
     if (section === 'work' && projectsRef.current) {
       projectsRef.current.scrollIntoView({ behavior: 'smooth' });
     } else if (section === 'still-images') {
