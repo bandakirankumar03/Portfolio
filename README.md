@@ -1,6 +1,32 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CGI | VFX Artist Portfolio
+
+## How to Run
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/bandakirankumar03/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Pull large files (videos)** — Install [Git LFS](https://git-lfs.com) first, then:
+   ```bash
+   git lfs pull
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+4. **Start the app**
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
 
 ## Available Scripts
 
